@@ -1,0 +1,8 @@
+{
+  "python.linting.pylintEnabled": true,
+  "python.linting.enabled": true,
+  "python.linting.pylintArgs": [
+    "--errors-only"
+  ],
+  "python.pythonPath": "/home/jaguilar992/anaconda2/bin/python"
+}
