@@ -22,7 +22,7 @@ class Procesador():
   def apaga_todos(self):
     for nucleo in self.nucleos:
         if nucleo != 'cpu0':
-          (sp.call(self.apagar % nucleo, shell=True))
+          sp.call(self.apagar % nucleo, shell=True)
   
   def apaga_nucleo (self, n):
     if (n<self.cuenta_nucleos and n!=0):
