@@ -23,7 +23,7 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>Benchmark</string>
+   <string>Test</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QGroupBox" name="groupBox">
@@ -41,10 +41,13 @@
       <height>600</height>
      </size>
     </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
     <property name="title">
      <string>Control</string>
     </property>
-    <widget class="QListView" name="listView">
+    <widget class="QListWidget" name="listaEncendidos">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -59,7 +62,7 @@
       <rect>
        <x>10</x>
        <y>30</y>
-       <width>111</width>
+       <width>131</width>
        <height>17</height>
       </rect>
      </property>
@@ -67,7 +70,7 @@
       <string>Núcleos Encendidos</string>
      </property>
     </widget>
-    <widget class="QListView" name="listView_2">
+    <widget class="QListWidget" name="listaApagados">
      <property name="geometry">
       <rect>
        <x>180</x>
@@ -82,7 +85,7 @@
       <rect>
        <x>180</x>
        <y>30</y>
-       <width>111</width>
+       <width>121</width>
        <height>17</height>
       </rect>
      </property>
@@ -90,12 +93,12 @@
       <string>Núcleos Apagados</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton">
+    <widget class="QPushButton" name="btnApagar">
      <property name="geometry">
       <rect>
-       <x>50</x>
+       <x>40</x>
        <y>230</y>
-       <width>87</width>
+       <width>101</width>
        <height>29</height>
       </rect>
      </property>
@@ -103,12 +106,12 @@
       <string>Apagar &gt;</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_2">
+    <widget class="QPushButton" name="btnEncender">
      <property name="geometry">
       <rect>
-       <x>220</x>
+       <x>206</x>
        <y>230</y>
-       <width>87</width>
+       <width>101</width>
        <height>29</height>
       </rect>
      </property>
@@ -116,12 +119,12 @@
       <string>&lt; Encender</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_4">
+    <widget class="QPushButton" name="btnReiniciar">
      <property name="geometry">
       <rect>
-       <x>120</x>
+       <x>140</x>
        <y>290</y>
-       <width>81</width>
+       <width>101</width>
        <height>29</height>
       </rect>
      </property>
@@ -129,12 +132,12 @@
       <string>Reiniciar</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_3">
+    <widget class="QPushButton" name="btnApagarTodo">
      <property name="geometry">
       <rect>
        <x>20</x>
        <y>290</y>
-       <width>81</width>
+       <width>91</width>
        <height>29</height>
       </rect>
      </property>
@@ -146,39 +149,29 @@
    <widget class="QGroupBox" name="groupBox_2">
     <property name="geometry">
      <rect>
-      <x>350</x>
-      <y>0</y>
-      <width>431</width>
-      <height>561</height>
+      <x>380</x>
+      <y>10</y>
+      <width>401</width>
+      <height>541</height>
      </rect>
     </property>
     <property name="title">
      <string>Estadísticas</string>
     </property>
-    <widget class="QwtPlot" name="qwtPlot">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>20</y>
-       <width>400</width>
-       <height>200</height>
-      </rect>
-     </property>
-    </widget>
    </widget>
    <widget class="QGroupBox" name="groupBox_3">
     <property name="geometry">
      <rect>
       <x>10</x>
       <y>10</y>
-      <width>321</width>
+      <width>351</width>
       <height>191</height>
      </rect>
     </property>
     <property name="title">
      <string>Actividad en núcleos</string>
     </property>
-    <widget class="QProgressBar" name="progressBar">
+    <widget class="QProgressBar" name="cpu0bar">
      <property name="geometry">
       <rect>
        <x>50</x>
@@ -220,7 +213,7 @@
       <string>cpu1</string>
      </property>
     </widget>
-    <widget class="QProgressBar" name="progressBar_2">
+    <widget class="QProgressBar" name="cpu1bar">
      <property name="geometry">
       <rect>
        <x>50</x>
@@ -237,7 +230,7 @@
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>100</y>
+       <y>110</y>
        <width>31</width>
        <height>17</height>
       </rect>
@@ -246,11 +239,11 @@
       <string>cpu2</string>
      </property>
     </widget>
-    <widget class="QProgressBar" name="progressBar_3">
+    <widget class="QProgressBar" name="cpu2bar">
      <property name="geometry">
       <rect>
        <x>50</x>
-       <y>100</y>
+       <y>110</y>
        <width>221</width>
        <height>23</height>
       </rect>
@@ -263,7 +256,7 @@
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>140</y>
+       <y>150</y>
        <width>31</width>
        <height>17</height>
       </rect>
@@ -272,11 +265,11 @@
       <string>cpu3</string>
      </property>
     </widget>
-    <widget class="QProgressBar" name="progressBar_4">
+    <widget class="QProgressBar" name="cpu3bar">
      <property name="geometry">
       <rect>
        <x>50</x>
-       <y>140</y>
+       <y>150</y>
        <width>221</width>
        <height>23</height>
       </rect>
@@ -293,19 +286,12 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>21</height>
+     <height>23</height>
     </rect>
    </property>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <customwidgets>
-  <customwidget>
-   <class>QwtPlot</class>
-   <extends>QFrame</extends>
-   <header>qwt_plot.h</header>
-  </customwidget>
- </customwidgets>
  <resources/>
  <connections/>
 </ui>
