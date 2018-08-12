@@ -1,3 +1,4 @@
+import psutil as ps
 import subprocess as sp
 import os
 import re
@@ -31,6 +32,12 @@ class Procesador():
     else:
       return None
   
+  def enciende_nucleo (self, n):
+    if (n<self.numero_nucleos and n!=0):
+      return sp.call(self.enceder % ("cpu"+str(n)), shell=True)
+    else:
+      return None
+
   def esta_apagado(self, n):
     n = int(n)
     if (n==0):
@@ -40,26 +47,38 @@ class Procesador():
         f = open('/sys/devices/system/cpu/cpu%s/online' % n, 'r')
         c = f.readlines()
         f.close()
-        print c[0][:-1]==1
-        return c[0][:-1]==1
+        return c[0][:-1]=='0'
       else:
         return True
 
   def get_lista_apagados(self):
     apagados = []
     for nucleo in self.nucleos:
-      print nucleo[3:]
       if (self.esta_apagado(nucleo[3:])):
         apagados.append(nucleo)
     return apagados
   
   def get_lista_encendidos(self):
-    apagados = self.get_lista_apagados()
-
+    encendidos = []
+    for nucleo in self.nucleos:
+      if (not self.esta_apagado(nucleo[3:])):
+        encendidos.append(nucleo)
+    return encendidos
+    
+  def get_porcentaje_n(self,n):
+    if (n<self.numero_nucleos):
+      try:
+        return ps.cpu_percent(percpu=True)[int(n)] or 0
+      except Exception as e:
+        return 0
+    else:
+      return 0
         
       
 
 if __name__ == '__main__':
   p = Procesador()
-  p.apaga_todos()
+  #p.enciende_todos()
   print p.get_lista_apagados()
+  print p.get_lista_encendidos()
+  print p.get_porcentaje_n(0)
