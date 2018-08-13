@@ -6,19 +6,19 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
+    <width>600</width>
     <height>600</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>800</width>
+    <width>600</width>
     <height>600</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>800</width>
+    <width>600</width>
     <height>600</height>
    </size>
   </property>
@@ -150,21 +150,50 @@
     <property name="geometry">
      <rect>
       <x>380</x>
-      <y>10</y>
-      <width>401</width>
-      <height>541</height>
+      <y>250</y>
+      <width>191</width>
+      <height>241</height>
      </rect>
     </property>
     <property name="title">
      <string>Estadísticas</string>
     </property>
+    <widget class="QLabel" name="label_7">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>40</y>
+       <width>131</width>
+       <height>17</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Puerto 80 Conexiones: </string>
+     </property>
+    </widget>
+    <widget class="QProgressBar" name="barnet">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>70</y>
+       <width>151</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="value">
+      <number>100</number>
+     </property>
+     <property name="format">
+      <string>%p</string>
+     </property>
+    </widget>
    </widget>
    <widget class="QGroupBox" name="groupBox_3">
     <property name="geometry">
      <rect>
       <x>10</x>
       <y>10</y>
-      <width>351</width>
+      <width>561</width>
       <height>191</height>
      </rect>
     </property>
@@ -176,12 +205,12 @@
       <rect>
        <x>50</x>
        <y>30</y>
-       <width>221</width>
+       <width>511</width>
        <height>23</height>
       </rect>
      </property>
      <property name="value">
-      <number>24</number>
+      <number>100</number>
      </property>
      <property name="invertedAppearance">
       <bool>false</bool>
@@ -218,12 +247,12 @@
       <rect>
        <x>50</x>
        <y>70</y>
-       <width>221</width>
+       <width>511</width>
        <height>23</height>
       </rect>
      </property>
      <property name="value">
-      <number>24</number>
+      <number>100</number>
      </property>
     </widget>
     <widget class="QLabel" name="label_5">
@@ -244,12 +273,12 @@
       <rect>
        <x>50</x>
        <y>110</y>
-       <width>221</width>
+       <width>511</width>
        <height>23</height>
       </rect>
      </property>
      <property name="value">
-      <number>24</number>
+      <number>100</number>
      </property>
     </widget>
     <widget class="QLabel" name="label_6">
@@ -270,12 +299,12 @@
       <rect>
        <x>50</x>
        <y>150</y>
-       <width>221</width>
+       <width>511</width>
        <height>23</height>
       </rect>
      </property>
      <property name="value">
-      <number>24</number>
+      <number>100</number>
      </property>
     </widget>
    </widget>
@@ -285,7 +314,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>600</width>
      <height>23</height>
     </rect>
    </property>

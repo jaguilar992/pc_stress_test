@@ -2,6 +2,7 @@ import sys
 from ui import *
 import cpu
 from barra_progreso_hilo import BarraProgresoHilo
+
 procesador = cpu.Procesador()
 app = QtWidgets.QApplication(sys.argv)
 ventana = QtWidgets.QMainWindow()
@@ -50,16 +51,21 @@ ui.cpu0bar.setValue(procesador.get_porcentaje_n(0))
 ui.cpu1bar.setValue(procesador.get_porcentaje_n(1))
 ui.cpu2bar.setValue(procesador.get_porcentaje_n(2))
 ui.cpu3bar.setValue(procesador.get_porcentaje_n(3))
+ui.barnet.setValue(procesador.get_clients())
 
 progreso0 = BarraProgresoHilo(ui.cpu0bar, procesador, 0)
 progreso1 = BarraProgresoHilo(ui.cpu1bar, procesador, 1)
 progreso2 = BarraProgresoHilo(ui.cpu2bar, procesador, 2)
 progreso3 = BarraProgresoHilo(ui.cpu3bar, procesador, 3)
+progreso4 = BarraProgresoHilo(ui.barnet, procesador, -1)
 
 progreso0.start()
 progreso1.start()
 progreso2.start()
 progreso3.start()
+progreso4.start()
+
+
 
 ventana.show()
 sys.exit(app.exec_())

@@ -74,7 +74,13 @@ class Procesador():
     else:
       return 0
         
-      
+  def get_clients(self):
+    a = ps.net_connections(kind="tcp")
+    count = 0
+    for con in a:
+      if (con.laddr.port==80 and con.raddr and con.status =='ESTABLISHED'):
+        count+=1
+    return count
 
 if __name__ == '__main__':
   p = Procesador()
@@ -82,3 +88,4 @@ if __name__ == '__main__':
   print p.get_lista_apagados()
   print p.get_lista_encendidos()
   print p.get_porcentaje_n(0)
+  print p.get_clients()

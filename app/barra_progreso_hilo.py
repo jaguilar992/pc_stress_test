@@ -8,7 +8,11 @@ class BarraProgresoHilo(QtCore.QThread):
     self.bar = bar
   
   def run(self):
-    while True:
-      self.bar.setValue(self.cpu.get_porcentaje_n(self.n))
-      time.sleep(0.25)
-    
+    if (self.n!=-1):
+      while True:
+        self.bar.setValue(self.cpu.get_porcentaje_n(self.n))
+        time.sleep(0.1)
+    else:
+      while True:
+        self.bar.setValue(self.cpu.get_clients())
+        time.sleep(0.1)
