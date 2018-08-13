@@ -4,5 +4,5 @@
   "python.linting.pylintArgs": [
     "--errors-only"
   ],
-  "python.pythonPath": "/home/jaguilar992/anaconda2/bin/python"
+  "python.pythonPath": "C:\\Users\\jagui\\Anaconda2\\python.exe"
 }
