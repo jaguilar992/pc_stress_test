@@ -11,7 +11,7 @@ class BarraProgresoHilo(QtCore.QThread):
     if (self.n!=-1):
       while True:
         self.bar.setValue(self.cpu.get_porcentaje_n(self.n))
-        time.sleep(0.01)
+        time.sleep(0.1)
     else:
       while True:
         self.bar.setValue(self.cpu.get_clients())

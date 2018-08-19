@@ -79,6 +79,7 @@ class Procesador():
     count = 0
     for con in a:
       if (con.laddr.port==80 and con.raddr and con.status =='ESTABLISHED'):
+#      if (con.laddr.port==80):
         count+=1
     return count
 
